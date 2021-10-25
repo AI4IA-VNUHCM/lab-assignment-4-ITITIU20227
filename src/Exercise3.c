@@ -49,9 +49,9 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 
 void Ex3(int in_arr[], int n){
 	int a[SIZE][SIZE];
-	int j = 1;
 	Array2Dconverter(in_arr,a,n,n);
 	//Your codes here
+	int j = 1;
 	for(int i = 0; i < n-2; i++) {
 		if(a[i][i] > a[j][j]) {
 			int temp = a[i][i];
