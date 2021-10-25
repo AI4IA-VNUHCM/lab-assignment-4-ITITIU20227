@@ -62,13 +62,13 @@ void Ex3(int in_arr[], int n){
 		printf("\n");
 	}
 	for(int k = n-1; k >= 0; k--) {
-		for(int m = 0; m < n; m++) {
-			if(a[k][m] < a[k-1][m+1]) {
-				int temp = a[k][m];
-				a[k][m] = a[k-1][m+1];
-				a[k-1][m+1] = temp;
-			}
+		int m = 0;
+		if(a[k][m] < a[k-1][m+1]) {
+			int temp = a[k][m];
+			a[k][m] = a[k-1][m+1];
+			a[k-1][m+1] = temp;
 		}
+		m++;
 		printf("\n");			
 	}
 	printArray(a,n,n);
