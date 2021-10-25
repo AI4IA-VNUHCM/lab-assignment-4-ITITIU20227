@@ -56,7 +56,7 @@ void Ex3(int in_arr[], int n){
 	}
 	else {
 		for(int i = 0; i < n; i++) {
-			for(int j = 1; j < n; j++) {
+			for(int j = i+1; j < n; j++) {
 				if(a[i][i] < a[j][j]) {
 					int temp = a[i][i];
 					a[i][i] = a[j][j];
