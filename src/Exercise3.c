@@ -69,6 +69,9 @@ void Ex3(int in_arr[], int n){
 			a[k-1][m+1] = temp;
 		}
 		m++;
+		if(m > n-1) {
+			break;
+		}
 		printf("\n");			
 	}
 	printArray(a,n,n);
