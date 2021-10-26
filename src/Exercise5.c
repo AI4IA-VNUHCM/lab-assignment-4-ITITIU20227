@@ -18,7 +18,9 @@ ________________________________________________________________________________
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #define SIZE 100
+
 
 void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
 {
