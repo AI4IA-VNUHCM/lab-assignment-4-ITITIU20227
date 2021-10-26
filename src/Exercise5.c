@@ -39,23 +39,22 @@ void Ex5(int arr[], int m, int n){
 	//Your codes here
 	int i = 0;
 	int max_all;
-	int b[SIZE];
-	for(int i = 0; i < m; i++) {
-		int min_row = a[i][0];
+	int b[m];
+	int min_row = a[i][0];
+	while(i < m) {
 		for(int j = 0; j < n; j++) {
 			if(a[i][j] < min_row) {
 				min_row = a[i][j];
 			}
 		}
 		b[i] = min_row;
-		min_row = a[i][0];
+		min_row = 0;
+		i++;
 	}
-	for(int m = 0; m < n-1; m++) {
-		for(int p = m+1; p < n; p++) {
-			if(b[m] < b[p]) {
-				max_all = b[p];
-			}
-		}
+	for(int k = 0; k < n-1; k++) {
+		if(b[k] < b[k+1]) {
+			max_all = b[k+1];
+		}	
 	}
 	printf("%d", max_all);
 }
