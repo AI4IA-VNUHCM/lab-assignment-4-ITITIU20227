@@ -51,7 +51,29 @@ void Ex3(int in_arr[], int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(in_arr,a,n,n);
 	//Your codes here
-	
+	int j = 1;
+	for(int i = 0; i < n-2; i++) {
+		if(a[i][i] > a[j][j]) {
+			int temp = a[i][i];
+			a[i][i] = a[j][j];
+			a[j][j] = temp;
+		}
+		j++;
+		printf("\n");
+	}
+	int m = 0;
+	for(int k = n-1; k >= 0; k--) {
+		if(a[k][m] < a[k-1][m+1]) {
+			int temp = a[k][m];
+			a[k][m] = a[k-1][m+1];
+			a[k-1][m+1] = temp;
+		}
+		m++;
+		if(m > n-1) {
+			break;
+		}
+		printf("\n");			
+	}
 	printArray(a,n,n);
 }
 

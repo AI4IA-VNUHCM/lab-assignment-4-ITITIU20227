@@ -18,7 +18,9 @@ ________________________________________________________________________________
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #define SIZE 100
+
 
 void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
 {
@@ -37,7 +39,27 @@ void Ex5(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here
-
+	int i = 0;
+	int max_all;
+	int b[m];
+	int min_row = INT_MAX;
+	while(i < m) {
+		for(int j = 0; j < n; j++) {
+			if(a[i][j] < min_row) {
+				min_row = a[i][j];
+			}
+		}
+		b[i] = min_row;
+		min_row = INT_MAX;
+		i++;
+	}
+	max_all = b[0];
+	for(int k = 1; k < n; k++) {
+		if(b[k] > max_all) {
+			max_all = b[k];
+		}	
+	}
+	printf("%d", max_all);
 }
 
 int main(int argc, char *argv[]) {

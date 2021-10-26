@@ -49,7 +49,16 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 
 void insertRow(int arr[], int a[SIZE][SIZE],int rowIndex, int m, int n){
 	//Your codes here
-	
+	m++;
+	int i = rowIndex+1;
+	for(int j = 0; j < n; j++) {
+		a[i][j] = a[i+1][j];
+		i++;
+		printf("\n");
+	}
+	for(int j = 0; j < n; j++) {
+		
+	}
 }
 
 void removeRow(int a[SIZE][SIZE], int rowIndex, int m, int n){
